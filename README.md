@@ -1,4 +1,4 @@
-web-app-template-simple
+d3-bars
 =======================
 
-A simple web app template with jQuery, and Bootstrap.  | Mizzou Workshop - Oct. 2014
+Exercise for [Chris Canipe's class](https://github.com/chriscanipe/Data-Vis-Spring-2015). A bar chart of Tyler Flower's year-over-year hits.
