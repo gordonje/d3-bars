@@ -1,5 +1,11 @@
+// domain pertains to the data
+
+// range pertains to the actual physical place on the chart
+
+// x becomes a method to translate the pixel value for the x coordinate of our data
+
 // define the margins
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
+var margin = {top: 100, right: 20, bottom: 30, left: 40},
 // define the width
     width = 600 - margin.left - margin.right,
 // define the height 
@@ -13,14 +19,14 @@ var x = d3.scale.ordinal()
 var y = d3.scale.linear()
     .range([height, 0]);
 
-// defines the x-axis as a d3.svg.axis method call
+// define the x-axis as a d3.svg.axis method call
 var xAxis = d3.svg.axis()
 // includes setting the scale
     .scale(x)
 // and the orientation of the labels (below the axis)
     .orient("bottom");
 
-// defines the y-axis as another d3.svg.axis method call
+// define the y-axis as another d3.svg.axis method call
 var yAxis = d3.svg.axis()
 // includes the scale
     .scale(y)
@@ -30,7 +36,7 @@ var yAxis = d3.svg.axis()
 // not sure what the 'Hits' string does here. if I change it, I don't notice any difference either in the page's display or markup
     .ticks(20, "Hits");
 
-// defines the svg that is our chart
+// define the svg that is our chart
 // first select the HTML element (the one with the 'chart' class) to which we append the svg
 var svg = d3.select(".chart").append("svg")
 // set the width attribute of the appended svg
@@ -39,6 +45,7 @@ var svg = d3.select(".chart").append("svg")
     .attr("height", height + margin.top + margin.bottom)
 // appends a shape group that...appears to be a container for every other shape in the svg...but it's a little fuzzy to me.
   .append("g")
+  // translate is the way that we define x and y coordinates for this group
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // calling d3's json method, the first argument is our data in the json file, the second is an anonymous function 
